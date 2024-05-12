@@ -1,0 +1,76 @@
+csi-xmsim - CSI: Command line:
+xmsim
+    -f /home/admin/shared/share_vmware/synthesis/xcelium.d/run.lnx8664.20.09.d/centos7_10395/xmsim.args
+        +xm64bit
+        +access+rcw
+        -gui
+        -MESSAGES
+        +EMGRLOG xrun.log
+        -XLSTIME 1715511226
+        -XLKEEP
+        -XLMODE ./xcelium.d/run.lnx8664.20.09.d
+        -RUNMODE
+        -CDSLIB ./xcelium.d/run.lnx8664.20.09.d/cds.lib
+        -HDLVAR ./xcelium.d/run.lnx8664.20.09.d/hdl.var
+        -XLNAME xrun
+        -XLVERSION TOOL:	xrun(64)	20.09-s001
+        -XLNAME ./xcelium.d/run.lnx8664.20.09.d/centos7_10395
+    -CHECK_VERSION TOOL:	xrun(64)	20.09-s001
+    -LOG_FD 4
+    -LOG_FD_NAME xrun.log
+    -cmdnopsim
+    -runlock /home/admin/shared/share_vmware/synthesis/xcelium.d/run.lnx8664.20.09.d/.xmlib.lock
+    -runscratch /home/admin/shared/share_vmware/synthesis/xcelium.d/run.lnx8664.20.09.d/centos7_10395
+
+csi-xmsim - CSI: *F,INTERR: INTERNAL EXCEPTION
+Observed simulation time : 0 FS + 0
+-----------------------------------------------------------------
+The tool has encountered an unexpected condition and must exit.
+Contact Cadence Design Systems customer support about this
+problem and provide enough information to help us reproduce it,
+including the logfile that contains this error message.
+  TOOL:	xmsim(64)	20.09-s001
+  HOSTNAME: centos7
+  OPERATING SYSTEM: Linux 3.10.0-1160.108.1.el7.x86_64 #1 SMP Thu Jan 25 16:17:31 UTC 2024 x86_64
+  MESSAGE: sv_bushandler - SIGBUS fault address not odd (0x7f4685a3f010 pc=0x7f467949e0c0 si_addr=0x7f4685a3f010 si_code=2), please see the xmsim_sigbus.10395 file
+-----------------------------------------------------------------
+
+csi-xmsim - CSI: Cadence Support Investigation, recording details
+External Code in function: <unavailable> offset -65509
+External Code in function: <unavailable> offset -65536
+Simulator Snap Shot: gd (SSS_GD) in snapshot worklib.counter_4bit_tb:v (SSS)
+Verilog Syntax Tree: register declaration (VST_D_REG) in module worklib.counter_4bit_tb:v (VST)
+	File: /home/admin/shared/share_vmware/synthesis/01_tb/testbench.v, line 6, position 17
+	Scope: counter_4bit_tb
+	Decompile: logic out_o
+	Source  : 	logic [3:0] out_o;
+	Position: 	                ^
+Intermediate File: string (IF_STRING) in module worklib.counter_4bit_tb:v (VST)
+	Decompile: sel_i
+Verilog Syntax Tree: module declaration (VST_D_MODULE) in module worklib.counter_4bit_tb:v (VST)
+	File: /home/admin/shared/share_vmware/synthesis/01_tb/testbench.v, line 1, position 21
+	Scope: counter_4bit_tb
+	Decompile: counter_4bit_tb
+	Source  : module counter_4bit_tb();
+	Position:                      ^
+Verilog Syntax Tree: overlay table (VST_OVERLAY_TABLE) in module worklib.counter_4bit_tb:v (SIG) <0x4e92dc1a>
+	Decompile: counter_4bit_tb
+Verilog Syntax Tree: indexed vector type (VST_T_INDEXED_VEC) in module worklib.counter_4bit_tb:v (VST)
+	Scope: counter_4bit_tb
+	Decompile: logic
+Verilog Syntax Tree: logic type (VST_T_LOGIC) in module worklib.counter_4bit_tb:v (VST)
+	Decompile: logic
+Verilog Syntax Tree: static range (VST_R_STATIC_RANGE) in module worklib.counter_4bit_tb:v (VST)
+	Decompile: 3 to 0
+External Code in function: <unavailable> offset -65046
+Simulator Snap Shot: top level instance (SSS_TLI) in snapshot worklib.counter_4bit_tb:v (SSS)
+Intermediate File: data block (IF_BLK) in snapshot worklib.counter_4bit_tb:v (SSS)
+Verilog Syntax Tree: register declaration (VST_D_REG) in module worklib.counter_4bit_tb:v (VST)
+	File: /home/admin/shared/share_vmware/synthesis/01_tb/testbench.v, line 5, position 11
+	Scope: counter_4bit_tb
+	Decompile: logic sel_i
+	Source  : 	logic sel_i;
+	Position: 	          ^
+Simulator Snap Shot: dynlib (SSS_DYNLIB) in snapshot worklib.counter_4bit_tb:v (SSS)
+External Code in function: <unavailable> offset -65504
+csi-xmsim - CSI: investigation complete took 0.091 secs, send this file to Cadence Support
